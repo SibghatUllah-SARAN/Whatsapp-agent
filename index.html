@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WhatsApp AI Agent dashboard">
+  <title>WhatsApp AI Agent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">✦</span> WA<span>AGENT</span></a>
+    <div class="status"><i></i> Agent dashboard</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span></span> AUTOMATION CONTROL CENTER</div>
+      <h1>Conversations,<br><em>handled smarter.</em></h1>
+      <p>Monitor incoming WhatsApp messages and automated replies from one clean workspace.</p>
+      <div class="hero-actions">
+        <button class="primary" id="refreshBtn">↻ Refresh messages</button>
+        <span class="secure-note">Private dashboard · API-key protected</span>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span>Total loaded</span><strong id="totalCount">—</strong><small>Messages in this view</small></article>
+      <article class="stat-card"><span>Incoming</span><strong id="inCount">—</strong><small>Customer messages</small></article>
+      <article class="stat-card"><span>Automated replies</span><strong id="outCount">—</strong><small>Agent responses</small></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><div class="eyebrow">LIVE ACTIVITY</div><h2>Message history</h2></div>
+        <span class="live-pill"><i></i> Latest activity</span>
+      </div>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search phone number or message...">
+        <button class="secondary" id="keyBtn">Set dashboard key</button>
+      </div>
+      <div id="notice" class="notice">Enter your dashboard key to load protected message history.</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>CONTACT</th><th>MESSAGE</th><th>DIRECTION</th><th>TIME (UTC)</th></tr></thead>
+          <tbody id="messageRows"><tr><td colspan="4" class="empty">No messages loaded yet.</td></tr></tbody>
+        </table>
+      </div>
+      <div class="panel-foot">Messages are stored in the backend SQLite database. This page does not display private data until you provide the dashboard key.</div>
+    </section>
+    <footer>WHATSAPP AI AGENT <span>·</span> STARTER PROJECT</footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
